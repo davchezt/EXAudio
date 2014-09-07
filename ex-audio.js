@@ -18,6 +18,10 @@ this.usingFlash = true;
 		
 (function (t) {
 	var userAgent = navigator.userAgent;
+	if (userAgent.toLowerCase().indexOf('firefox/31.0') != -1) {
+		that.canUseAudio = true;
+		that.usingFlash = false;
+	}
 	if (userAgent.toLowerCase().indexOf('chrome') != -1){
 		t.canUseAudio = true;
 		t.usingFlash = false;
@@ -33,6 +37,10 @@ this.usingFlash = true;
 	if (userAgent.toLowerCase().indexOf('msie 9.0') != -1){
 		t.canUseAudio = true;
 		t.usingFlash = false;
+	}
+	if (userAgent.toLowerCase().indexOf('msie 10.0') != -1) {
+		that.canUseAudio = true;
+		that.usingFlash = false;
 	}
 	if (userAgent.toLowerCase().indexOf('android') != -1){
 		t.canUseAudio = false;
